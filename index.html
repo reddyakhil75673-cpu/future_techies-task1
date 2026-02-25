@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedReminder App</title>
   <style>
+    /* Background with medicine image */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background: url('https://cdn.pixabay.com/photo/2016/03/31/20/51/pills-1295990_1280.png') no-repeat center center fixed;
+      background: url('https://cdn.pixabay.com/photo/2017/03/02/02/07/medicine-2111400_1280.jpg') no-repeat center center fixed;
       background-size: cover;
+      opacity: 0;
+      animation: fadeIn 2s forwards; /* Hover-like fade effect on load */
     }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
     h1 {
       text-align: center;
       color: #2c3e50;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
       padding: 10px;
       border-radius: 8px;
     }
+
     .reminder-form {
       max-width: 400px;
       margin: 20px auto;
@@ -27,6 +36,7 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
     input, button {
       width: 100%;
       padding: 10px;
@@ -34,15 +44,38 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    button {
-      background: #3498db;
+
+    /* Different button styles */
+    .add-btn {
+      background: #27ae60;
       color: white;
       border: none;
       cursor: pointer;
     }
-    button:hover {
-      background: #2980b9;
+    .add-btn:hover {
+      background: #1e8449;
     }
+
+    .clear-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .clear-btn:hover {
+      background: #c0392b;
+    }
+
+    .edit-btn {
+      background: #f39c12;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .edit-btn:hover {
+      background: #d35400;
+    }
+
     .reminders {
       max-width: 500px;
       margin: 20px auto;
@@ -50,19 +83,12 @@
       padding: 15px;
       border-radius: 8px;
     }
+
     .reminder-item {
       background: #ecf0f1;
       padding: 10px;
       margin: 8px 0;
       border-radius: 5px;
-    }
-    .clear-btn {
-      background: #e74c3c;
-      color: white;
-      margin-top: 10px;
-    }
-    .clear-btn:hover {
-      background: #c0392b;
     }
   </style>
 </head>
@@ -72,8 +98,9 @@
   <div class="reminder-form">
     <input type="text" id="medicine" placeholder="Medicine name" required>
     <input type="time" id="time" required>
-    <button onclick="addReminder()">Add Reminder</button>
+    <button class="add-btn" onclick="addReminder()">Add Reminder</button>
     <button class="clear-btn" onclick="clearReminders()">Clear All Reminders</button>
+    <button class="edit-btn" onclick="editReminder()">Edit Reminder (Demo)</button>
   </div>
 
   <div class="reminders" id="reminders">
@@ -103,6 +130,10 @@
     function clearReminders() {
       const reminderList = document.getElementById('reminders');
       reminderList.innerHTML = '<h2>Your Reminders</h2>';
+    }
+
+    function editReminder() {
+      alert("Edit functionality can be added later!");
     }
   </script>
 </body>
