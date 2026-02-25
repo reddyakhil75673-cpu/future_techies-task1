@@ -7,21 +7,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
       margin: 0;
       padding: 20px;
+      background: url('https://cdn.pixabay.com/photo/2016/03/31/20/51/pills-1295990_1280.png') no-repeat center center fixed;
+      background-size: cover;
     }
     h1 {
       text-align: center;
       color: #2c3e50;
+      background: rgba(255,255,255,0.8);
+      padding: 10px;
+      border-radius: 8px;
     }
     .reminder-form {
       max-width: 400px;
       margin: 20px auto;
       padding: 15px;
-      background: #fff;
+      background: rgba(255,255,255,0.9);
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     input, button {
       width: 100%;
@@ -42,12 +46,23 @@
     .reminders {
       max-width: 500px;
       margin: 20px auto;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 8px;
     }
     .reminder-item {
       background: #ecf0f1;
       padding: 10px;
       margin: 8px 0;
       border-radius: 5px;
+    }
+    .clear-btn {
+      background: #e74c3c;
+      color: white;
+      margin-top: 10px;
+    }
+    .clear-btn:hover {
+      background: #c0392b;
     }
   </style>
 </head>
@@ -58,6 +73,7 @@
     <input type="text" id="medicine" placeholder="Medicine name" required>
     <input type="time" id="time" required>
     <button onclick="addReminder()">Add Reminder</button>
+    <button class="clear-btn" onclick="clearReminders()">Clear All Reminders</button>
   </div>
 
   <div class="reminders" id="reminders">
@@ -82,6 +98,11 @@
       } else {
         alert("Please enter both medicine name and time.");
       }
+    }
+
+    function clearReminders() {
+      const reminderList = document.getElementById('reminders');
+      reminderList.innerHTML = '<h2>Your Reminders</h2>';
     }
   </script>
 </body>
