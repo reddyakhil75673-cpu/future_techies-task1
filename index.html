@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedReminder App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .reminder-form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .reminders {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .reminder-item {
+      background: #ecf0f1;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>💊 MedReminder</h1>
+  
+  <div class="reminder-form">
+    <input type="text" id="medicine" placeholder="Medicine name" required>
+    <input type="time" id="time" required>
+    <button onclick="addReminder()">Add Reminder</button>
+  </div>
+
+  <div class="reminders" id="reminders">
+    <h2>Your Reminders</h2>
+  </div>
+
+  <script>
+    function addReminder() {
+      const medicine = document.getElementById('medicine').value;
+      const time = document.getElementById('time').value;
+
+      if (medicine && time) {
+        const reminderList = document.getElementById('reminders');
+        const item = document.createElement('div');
+        item.className = 'reminder-item';
+        item.textContent = `Take ${medicine} at ${time}`;
+        reminderList.appendChild(item);
+
+        // Clear inputs
+        document.getElementById('medicine').value = '';
+        document.getElementById('time').value = '';
+      } else {
+        alert("Please enter both medicine name and time.");
+      }
+    }
+  </script>
+</body>
+</html>
