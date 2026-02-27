@@ -1,119 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APChallan</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Techies</title>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        color: white;
     }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
     header {
-      background: #003366;
-      color: white;
-      padding: 15px;
-      text-align: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 2px;
     }
-    header img {
-      height: 60px;
-      vertical-align: middle;
+
+    .tagline {
+        text-align: center;
+        font-size: 16px;
+        color: #00ffff;
+        margin-bottom: 30px;
     }
-    nav {
-      background: #0055a5;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 8px 16px;
-      transition: background 0.3s, color 0.3s;
-    }
-    nav a:hover {
-      background: white;
-      color: #0055a5;
-      border-radius: 5px;
-    }
+
     .container {
-      max-width: 400px;
-      margin: 40px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
     }
-    h2 {
-      text-align: center;
-      color: #003366;
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        text-align: center;
     }
-    input[type="text"], input[type="password"], input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+
+    .stat-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0,255,255,0.5);
     }
+
+    .form-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-box {
+        flex: 1;
+        min-width: 280px;
+        background: rgba(255,255,255,0.1);
+        padding: 25px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0,255,255,0.5);
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+    }
+
     button {
-      width: 100%;
-      padding: 10px;
-      background: #0055a5;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
+        width: 100%;
+        padding: 10px;
+        background: cyan;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
     }
+
     button:hover {
-      background: #003366;
+        background: #00bcd4;
     }
+
+    .users-list {
+        margin-top: 40px;
+    }
+
+    .user {
+        padding: 10px;
+        margin: 5px 0;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+    }
+
     footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 14px;
+        opacity: 0.7;
     }
-  </style>
+</style>
 </head>
+
 <body>
-  <header>
-    <img src="ap_logo.png" alt="AP Government Logo"> 
-    <h1>APChallan</h1>
-  </header>
 
-  <nav>
-    <a href="#login">Login</a>
-    <a href="#signup">Signup</a>
-  </nav>
+<header>🚀 Future Techies</header>
+<div class="tagline">Innovating Tomorrow, Connecting Innovators</div>
 
-  <div class="container" id="login">
-    <h2>Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+<div class="container">
 
-  <div class="container" id="signup">
-    <h2>Signup</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Signup</button>
-    </form>
-  </div>
+    <div class="stats">
+        <div class="stat-box">
+            <h2 id="activeUsers">120</h2>
+            <p>Active Users</p>
+        </div>
+        <div class="stat-box">
+            <h2 id="totalUsers">350</h2>
+            <p>Total Users</p>
+        </div>
+    </div>
 
-  <footer>
-    <p>AP Traffic Police Toll-Free Number: 1800-425-2909</p>
-  </footer>
+    <div class="form-section">
+
+        <div class="form-box">
+            <h3>Login</h3>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div class="form-box">
+            <h3>Signup</h3>
+            <input type="text" id="newUser" placeholder="Create Username">
+            <input type="password" placeholder="Create Password">
+            <button onclick="signup()">Signup</button>
+        </div>
+
+    </div>
+
+    <div class="users-list">
+        <h3>Frequently Used People</h3>
+        <div id="userList">
+            <div class="user">TechMaster01</div>
+            <div class="user">CodeWarriorX</div>
+            <div class="user">AI_Genius</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Future Techies | Designed for Innovation
+</footer>
+
+<script>
+    let totalUsers = 350;
+    let activeUsers = 120;
+
+    function signup() {
+        let username = document.getElementById("newUser").value;
+        if(username !== "") {
+            let userDiv = document.createElement("div");
+            userDiv.className = "user";
+            userDiv.innerText = username;
+            document.getElementById("userList").appendChild(userDiv);
+
+            totalUsers++;
+            activeUsers++;
+
+            document.getElementById("totalUsers").innerText = totalUsers;
+            document.getElementById("activeUsers").innerText = activeUsers;
+
+            alert("Signup Successful!");
+        }
+    }
+
+    function login() {
+        activeUsers++;
+        document.getElementById("activeUsers").innerText = activeUsers;
+        alert("Login Successful!");
+    }
+</script>
+
 </body>
+
 </html>
